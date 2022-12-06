@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProductSellerWebsite.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Welcome to Product and Seller Website!</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="list-group list-group-horizontal">
+            <a class="list-group-item list-group-item-action" href="~/Home/Index">Home</a>
+            <a class="list-group-item list-group-item-action active"  aria-current="true" href="~/Products">Manage Products</a>
+            <a class="list-group-item list-group-item-action" href="~/Sellers">Manage Sellers</a>
+        </div>
+    </div>
+    <hr/>
+    <h1>Manage Seller's Products</h1>
+
+    <p>
+        <a class="btn btn-primary btn-lg active" asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PricePerUnit)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Seller)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PricePerUnit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Year)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Seller.SellerID)
+                    </td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm active" asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
+                        <a class="btn btn-secondary btn-sm active" asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
+                        <a class="btn btn-secondary btn-sm active" asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
