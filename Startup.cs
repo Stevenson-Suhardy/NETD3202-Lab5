@@ -1,3 +1,9 @@
+/*
+ * Name: Stevenson Suhardy
+ * Date: November 21, 2022
+ * Student ID: 100839397
+ */
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +40,7 @@ namespace ProductSellerWebsite
             services.AddMvc(options => options.EnableEndpointRouting = false);
             // Add connection
             string connection = @"Server=(localdb)\mssqllocaldb;Database=ProductSellerWebsite;Trusted_Connection=True;ConnectRetryCount=0";
+            // Creating context
             services.AddDbContext<Context>(options => options.UseSqlServer(connection));
         }
 

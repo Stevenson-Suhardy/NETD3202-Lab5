@@ -1,14 +1,22 @@
-﻿@model IEnumerable<ProductSellerWebsite.Models.Seller>
+﻿<!--
+Name: Stevenson Suhardy
+Date: December 5, 2022
+Student ID: 100839397
+-->
+
+@model IEnumerable<ProductSellerWebsite.Models.Seller>
 
 @{
     ViewData["Title"] = "Index";
 }
+
 <!DOCTYPE HTML>
 <html>
 <head>
     <title>Welcome to Product and Seller Website!</title>
 </head>
 <body>
+    <!-- Using div to make a nav bar -->
     <div class="container-fluid">
         <div class="list-group list-group-horizontal">
             <a class="list-group-item list-group-item-action" href="~/Home/Index">Home</a>
@@ -18,11 +26,13 @@
     </div>
     <hr />
     <h1>Manage Sellers</h1>
-
+    <!-- Creating a button to change view to create new Product -->
     <p>
         <a class="btn btn-primary btn-lg active" asp-action="Create">Create New</a>
     </p>
+
     <table class="table">
+        <!-- Generate table header -->
         <thead class="thead-dark">
             <tr>
                 <th>
@@ -37,6 +47,7 @@
                 <th></th>
             </tr>
         </thead>
+        <!-- Generate data from the model -->
         <tbody>
             @foreach (var item in Model)
             {
@@ -51,6 +62,7 @@
                         @Html.DisplayFor(modelItem => item.LastName)
                     </td>
                     <td>
+                        <!-- Creating Read, Update, and Delete functionality for each product -->
                         <a class="btn btn-secondary btn-sm active" asp-action="Edit" asp-route-id="@item.SellerID">Edit</a> |
                         <a class="btn btn-secondary btn-sm active" asp-action="Details" asp-route-id="@item.SellerID">Details</a> |
                         <a class="btn btn-secondary btn-sm active" asp-action="Delete" asp-route-id="@item.SellerID">Delete</a>

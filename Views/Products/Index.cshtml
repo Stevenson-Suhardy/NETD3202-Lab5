@@ -1,4 +1,10 @@
-﻿@model IEnumerable<ProductSellerWebsite.Models.Product>
+﻿<!--
+Name: Stevenson Suhardy
+Date: November 21, 2022
+Student ID: 100839397
+-->
+
+@model IEnumerable<ProductSellerWebsite.Models.Product>
 
 @{
     ViewData["Title"] = "Index";
@@ -9,19 +15,21 @@
     <title>Welcome to Product and Seller Website!</title>
 </head>
 <body>
+    <!-- Using div to make a nav bar -->
     <div class="container-fluid">
         <div class="list-group list-group-horizontal">
             <a class="list-group-item list-group-item-action" href="~/Home/Index">Home</a>
-            <a class="list-group-item list-group-item-action active"  aria-current="true" href="~/Products">Manage Products</a>
+            <a class="list-group-item list-group-item-action active" aria-current="true" href="~/Products">Manage Products</a>
             <a class="list-group-item list-group-item-action" href="~/Sellers">Manage Sellers</a>
         </div>
     </div>
-    <hr/>
+    <hr />
     <h1>Manage Seller's Products</h1>
-
+    <!-- Creating a button to change view to create new Seller -->
     <p>
         <a class="btn btn-primary btn-lg active" asp-action="Create">Create New</a>
     </p>
+    <!-- Generate table header -->
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -40,6 +48,7 @@
                 <th></th>
             </tr>
         </thead>
+        <!-- Generate data from the model -->
         <tbody>
             @foreach (var item in Model)
             {
@@ -57,6 +66,7 @@
                         @Html.DisplayFor(modelItem => item.Seller.SellerID)
                     </td>
                     <td>
+                        <!-- Creating Read, Update, and Delete functionality for each seller -->
                         <a class="btn btn-secondary btn-sm active" asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
                         <a class="btn btn-secondary btn-sm active" asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
                         <a class="btn btn-secondary btn-sm active" asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
