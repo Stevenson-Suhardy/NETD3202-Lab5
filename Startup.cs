@@ -19,6 +19,8 @@ using ProductSellerWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
+using ProductSellerWebsite.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace ProductSellerWebsite
 {
@@ -35,13 +37,15 @@ namespace ProductSellerWebsite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
+            services.AddMvc();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             // Disable endpoint routing
             services.AddMvc(options => options.EnableEndpointRouting = false);
-            // Add connection
-            string connection = @"Server=(localdb)\mssqllocaldb;Database=ProductSellerWebsite;Trusted_Connection=True;ConnectRetryCount=0";
             // Creating context
-            services.AddDbContext<Context>(options => options.UseSqlServer(connection));
+            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<LoginContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<LoginContext>().AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +65,8 @@ namespace ProductSellerWebsite
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseMvcWithDefaultRoute();
 
             app.UseAuthorization();
 

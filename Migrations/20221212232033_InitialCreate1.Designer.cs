@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ProductSellerWebsite.Models;
+using ProductSellerWebsite.Data;
 
 namespace ProductSellerWebsite.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20221206004543_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20221212232033_InitialCreate1")]
+    partial class InitialCreate1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

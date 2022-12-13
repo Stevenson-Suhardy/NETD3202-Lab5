@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProductSellerWebsite.Models;
+using ProductSellerWebsite.Data;
 
 namespace ProductSellerWebsite.Controllers
 {

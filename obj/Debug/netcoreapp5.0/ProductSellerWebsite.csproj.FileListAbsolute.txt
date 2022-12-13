@@ -152,3 +152,13 @@ C:\Users\vense\source\repos\ProductSellerWebsite\obj\Debug\netcoreapp5.0\Razor\V
 C:\Users\vense\source\repos\ProductSellerWebsite\obj\Debug\netcoreapp5.0\Razor\Views\Sellers\Details.cshtml.g.cs
 C:\Users\vense\source\repos\ProductSellerWebsite\obj\Debug\netcoreapp5.0\Razor\Views\Sellers\Edit.cshtml.g.cs
 C:\Users\vense\source\repos\ProductSellerWebsite\obj\Debug\netcoreapp5.0\Razor\Views\Sellers\Index.cshtml.g.cs
+C:\Users\vense\source\repos\ProductSellerWebsite\bin\Debug\netcoreapp5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\vense\source\repos\ProductSellerWebsite\bin\Debug\netcoreapp5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\vense\source\repos\ProductSellerWebsite\bin\Debug\netcoreapp5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\vense\source\repos\ProductSellerWebsite\bin\Debug\netcoreapp5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\vense\source\repos\ProductSellerWebsite\bin\Debug\netcoreapp5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\vense\source\repos\ProductSellerWebsite\obj\Debug\netcoreapp5.0\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\vense\source\repos\ProductSellerWebsite\obj\Debug\netcoreapp5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\vense\source\repos\ProductSellerWebsite\obj\Debug\netcoreapp5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\vense\source\repos\ProductSellerWebsite\obj\Debug\netcoreapp5.0\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+C:\Users\vense\source\repos\ProductSellerWebsite\obj\Debug\netcoreapp5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs
